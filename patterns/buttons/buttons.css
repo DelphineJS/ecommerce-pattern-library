@@ -1,3 +1,5 @@
+/* Buttons on light */
+
 .btn {
   background-color: var(--color-accent);
   border-color: var(--color-accent);
@@ -7,16 +9,18 @@
   text-transform: uppercase;
 }
 
-.btn-light {
-  background-color: var(--color-primary-light);
-  color: var(--color-secondary-dark);
-  border-color: var(--color-primary-light);
-}
-
 .btn-ghost {
   background-color: rgba(255, 255, 255, 0);
   color: var(--color-accent);
   border-color: var(--color-accent);
+}
+
+/* Buttons on dark*/
+
+.btn-light {
+  background-color: var(--color-primary-light);
+  color: var(--color-secondary-dark);
+  border-color: var(--color-primary-light);
 }
 
 .btn-ghost-light {
@@ -24,21 +28,24 @@
   border-color: var(--color-primary-light);
 }
 
+/* Buttons on light hover states*/
 
 .btn:hover {
   background-color: var(--color-secondary-dark);
   border-color: var(--color-secondary-dark);
 }
 
-.btn-light:hover {
-  background-color: var(--color-secondary-medium);
-  border-color: var(--color-secondary-medium);
-}
-
 .btn-ghost:hover {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
   color: #fff;
+}
+
+/* Buttons on dark hover states*/
+
+.btn-light:hover {
+  background-color: var(--color-secondary-medium);
+  border-color: var(--color-secondary-medium);
 }
 
 .btn-ghost-light:hover {

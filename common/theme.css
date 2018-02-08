@@ -57,29 +57,25 @@ a:visited {
 
 /* Lists */
 
-ol {
-  list-style-type: decimal;
-}
-
-/*
 ul li {
   color: #3c3c3c;
-  list-style: none;
 }
 
 ul li::before {
-  color: color: var(--color-secondary);
-  content: "\2022";
-  font-size: 1em;
-  padding-right: 1em;
-  position: relative;
-  top: 0em;
+  color: var(--color-secondary);
+  content: "•";
 }
-*/
+
+ol li:before {
+  color: var(--color-secondary);
+  font-weight: bold;
+}
+
 
 dt {
   text-transform: uppercase;
   color: var(--color-accent);
+  font-weight: bold;
 }
 
 /* Quotes & Highlight */

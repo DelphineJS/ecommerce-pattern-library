@@ -15,3 +15,5 @@ colors:
   accent: |
     The accent colour represents mystery. Use it for buttons, headings, and to highlight important content.
 ---
+
+Black Stag Apparel is an Ottawa-based company that carries linocut prints, hand-printed clothing, and leather goods. Our items are printed traditionally and assembled by hand, and our ultimate goal is to provide our customer with a beautiful, unique product.
