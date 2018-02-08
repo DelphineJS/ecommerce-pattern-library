@@ -40,7 +40,7 @@ h5 {
 h6 {
   text-transform: uppercase;
   color: var(--color-secondary-dark);
-  font-weight: 400;
+  font-weight: normal;
 }
 
 a {
@@ -52,8 +52,9 @@ ol {
 }
 
 a:visited {
-  color: var(--color-secondary-medium)
+  color: var(--color-secondary-medium);
 }
+
 /*
 ul li {
   color: #3c3c3c;
@@ -73,4 +74,14 @@ ul li::before {
 dt {
   text-transform: uppercase;
   color: var(--color-accent);
+}
+
+blockquote {
+  border-left: 5px solid var(--color-accent);
+  padding-left: 1em;
+}
+
+mark {
+  background-color: var(--color-secondary);
+  color: #fff;
 }
