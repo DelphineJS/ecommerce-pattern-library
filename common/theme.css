@@ -8,6 +8,8 @@
   --font-primary: "Poppins", sans-serif;
 }
 
+/*Typography*/
+
 html {
   font-family: var(--font-primary);
 }
@@ -43,16 +45,20 @@ h6 {
   font-weight: normal;
 }
 
+/*Links*/
+
 a {
   color: var(--color-secondary);
 }
 
-ol {
-  list-style-type: decimal;
-}
-
 a:visited {
   color: var(--color-secondary-medium);
+}
+
+/*Lists*/
+
+ol {
+  list-style-type: decimal;
 }
 
 /*
@@ -75,6 +81,8 @@ dt {
   text-transform: uppercase;
   color: var(--color-accent);
 }
+
+/*Quotes & Highlight*/
 
 blockquote {
   border-left: 5px solid var(--color-accent);
