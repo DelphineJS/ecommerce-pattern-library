@@ -11,3 +11,66 @@
 html {
   font-family: var(--font-primary);
 }
+
+h1 {
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+h2 {
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+h3 {
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+h4 {
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+h5 {
+  text-transform: uppercase;
+  color: var(--color-secondary-dark);
+}
+
+h6 {
+  text-transform: uppercase;
+  color: var(--color-secondary-dark);
+  font-weight: 400;
+}
+
+a {
+  color: var(--color-secondary);
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+a:visited {
+  color: var(--color-secondary-medium)
+}
+/*
+ul li {
+  color: #3c3c3c;
+  list-style: none;
+}
+
+ul li::before {
+  color: color: var(--color-secondary);
+  content: "\2022";
+  font-size: 1em;
+  padding-right: 1em;
+  position: relative;
+  top: 0em;
+}
+*/
+
+dt {
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
