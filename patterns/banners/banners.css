@@ -1,0 +1,29 @@
+.home-banner-bg {
+  background: url("../../images/pines.jpg") bottom center /cover no-repeat;
+  height: 90vh;
+}
+
+.banner-head {
+  color: var(--color-primary);
+}
+
+.banner-text {
+  color: var(--color-primary);
+}
+
+.footer-banner-bg {
+  background: url("../../images/backpack.jpg") bottom center /cover no-repeat;
+  min-height: 400px;
+}
+
+.ad-banner-bg {
+  background: url("../../images/flannel.jpg") bottom center /cover no-repeat;
+  min-height: 300px;
+  max-width: 900px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.ad-banner-text {
+  width: 75%;
+}
