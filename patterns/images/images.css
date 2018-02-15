@@ -1,0 +1,7 @@
+.image-header-bg {
+  background: url("../../images/mountain.jpg") center /cover no-repeat;
+  min-height: 300px;
+  max-width: 900px;
+  transform: translateX(-50%);
+  left: 50%;
+}
