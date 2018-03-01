@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1519891712669
+ * @version 1519914337325
  */
-const patternManifest_1519891712669 = {
+const patternManifest_1519914337325 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -696,35 +696,45 @@ const patternManifest_1519891712669 = {
           "namePretty": "Basic field",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/basic-field.html",
           "localPath": "patterns/forms/basic-field.html",
-          "readme": {}
+          "readme": {
+            "width": 400
+          }
         },
         {
           "name": "checkbox",
           "namePretty": "Checkbox",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/checkbox.html",
           "localPath": "patterns/forms/checkbox.html",
-          "readme": {}
+          "readme": {
+            "width": 400
+          }
         },
         {
           "name": "drop-down",
           "namePretty": "Drop down",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/drop-down.html",
           "localPath": "patterns/forms/drop-down.html",
-          "readme": {}
+          "readme": {
+            "width": 400
+          }
         },
         {
           "name": "radio-buttons",
           "namePretty": "Radio buttons",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/radio-buttons.html",
           "localPath": "patterns/forms/radio-buttons.html",
-          "readme": {}
+          "readme": {
+            "width": 400
+          }
         },
         {
           "name": "text-field",
           "namePretty": "Text field",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/text-field.html",
           "localPath": "patterns/forms/text-field.html",
-          "readme": {}
+          "readme": {
+            "width": 400
+          }
         }
       ],
       "md": [
@@ -809,5 +819,5 @@ const patternManifest_1519891712669 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519891712669);
+patternBotIncludes(patternManifest_1519914337325);
 }());

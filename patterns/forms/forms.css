@@ -3,6 +3,34 @@ label {
   text-transform: uppercase;
 }
 
+.flag-optional {
+  color: #999;
+}
+
+.is-validated input:invalid,
+.is-validated input[type="checkbox"]:invalid + label::before {
+  border-color:
+}
+
+.error-message {
+  display: none;
+  background-color: #fee;
+  color: #891133;
+}
+
+.error-message-highlighted {
+  background-color: #891133;
+  color: #fff;
+}
+
+.is-validated > .error-message:first-child,
+.is-validated input:invalid ~ .error-message,
+input.is-validated:invalid ~ .error-message,
+.is-validated input:invalid ~ label .error-message {
+  display: block;
+}
+
+
 .box {
   border: 1.5px solid var(--color-secondary-medium);
   height: 110%;
@@ -13,7 +41,7 @@ label {
 }
 
 legend {
-  font: var(--color-accent);
+  color: var(--color-accent);
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.5em;
@@ -24,10 +52,19 @@ legend {
   opacity: 0.5;
 }
 
-.radio label:checked{
-  opacity: 1;
+[type="radio"] + label {
+  opacity: .5;
 }
 
 .radio {
   padding-left: 1em;
+  font-size: 1rem;
+}
+
+[type="radio"]:checked + label {
+  opacity: 1;
+}
+
+[type="radio"]:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Ccircle fill='%231d3a3d' cx='128' cy='128' r='70.4'/%3E%3C/svg%3E");
 }

@@ -1393,7 +1393,7 @@
         </div>
           <div class="pattern-desc milli island" style="">
             <div class="max-length"><ul>
-<li>Basic fields are seen throughout all forms. They are one-line text input fields for things like names, addresses and other answers under 10 words.</li>
+<li>Basic fields are seen throughout all forms. They are one-line text input fields for things like names, addresses and general short answer fields.</li>
 <li>These fields can be used within grids to determine their width. If the answer is anticipated to be short, two may appear on the same line.</li>
 <li>They must float on the page, and should not touch the element above or below them. Their width is also capped at larger screen sizes.</li>
 </ul>
@@ -1402,7 +1402,7 @@
 
       <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
-          <div class="resizeable-pattern relative" style="">
+          <div class="resizeable-pattern relative" style="width:400px">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
             <iframe data-src="patterns/forms/basic-field.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
               <div class="resizeable-pattern-length">
@@ -1427,12 +1427,14 @@
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="forms-basic-field-code-sample-copy-chunk">&lt;form action="index.html" method="post"&gt;
-  &lt;div class="push-1-2 gutter-1-4">
-    &lt;label class="milli" for="name">Name&lt;/label>
-    &lt;input class="box milli" id="name">
-  &lt;/div>
-&lt;/form>
+              <code><pre id="forms-basic-field-code-sample-copy-chunk">&lt;div class="push-1-2 gutter-1-4"&gt;
+  &lt;label class="milli" for="name">Name&lt;/label>
+  &lt;input class="box milli" id="name" required aria-describedby="name-error">
+  &lt;p class="error-message milli island-1-4 push-0" id="name-error">
+    &lt;i class="icon i-16">&lt;svg>&lt;use xlink:href="../../images/icons-1.svg#error"/>&lt;/svg>&lt;/i>
+    &lt;span class="icon-label">Please provide a name&lt;/span>
+  &lt;/p>
+&lt;/div>
 </pre></code>
             </div>
           </div>
@@ -1475,7 +1477,7 @@
 
       <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
-          <div class="resizeable-pattern relative" style="">
+          <div class="resizeable-pattern relative" style="width:400px">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
             <iframe data-src="patterns/forms/checkbox.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
               <div class="resizeable-pattern-length">
@@ -1549,7 +1551,7 @@
 
       <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
-          <div class="resizeable-pattern relative" style="">
+          <div class="resizeable-pattern relative" style="width:400px">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
             <iframe data-src="patterns/forms/drop-down.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
               <div class="resizeable-pattern-length">
@@ -1574,22 +1576,24 @@
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="forms-drop-down-code-sample-copy-chunk">&lt;form class="picker" action="index.html" method="post"&gt;
-  &lt;div class="push-1-2 gutter-1-4">
-    &lt;label class="milli" for="province">Province&lt;/label>
-    &lt;input class="box placeholder milli" id="province" placeholder="Select Province" list="province-list" required>
-    &lt;datalist id="province-list">
-      &lt;option value="Alberta">
-      &lt;/option>
-      &lt;option value="Ontario">
-      &lt;/option>
-      &lt;option value="Qu&#xE9;bec">
-      &lt;/option>
-      &lt;option value="Nova Scotia">
-      &lt;/option>
-    &lt;/datalist>
-  &lt;/div>
-&lt;/form>
+              <code><pre id="forms-drop-down-code-sample-copy-chunk">&lt;div class="push-1-2 gutter-1-4"&gt;
+  &lt;label class="milli" for="province">Province&lt;/label>
+  &lt;input class="box placeholder milli" id="province" placeholder="Select Province" list="province-list" required aria-describedby="drop-error">
+  &lt;datalist id="province-list">
+    &lt;option value="Alberta">
+    &lt;/option>
+    &lt;option value="Ontario">
+    &lt;/option>
+    &lt;option value="Qu&#xE9;bec">
+    &lt;/option>
+    &lt;option value="Nova Scotia">
+    &lt;/option>
+  &lt;/datalist>
+  &lt;p class="error-message milli island-1-4 push-0" id="drop-error">
+    &lt;i class="icon i-16">&lt;svg>&lt;use xlink:href="../../images/icons-1.svg#error"/>&lt;/svg>&lt;/i>
+    &lt;span class="icon-label">Please select a province&lt;/span>
+  &lt;/p>
+&lt;/div>
 </pre></code>
             </div>
           </div>
@@ -1633,7 +1637,7 @@
 
       <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
-          <div class="resizeable-pattern relative" style="">
+          <div class="resizeable-pattern relative" style="width:400px">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
             <iframe data-src="patterns/forms/radio-buttons.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
               <div class="resizeable-pattern-length">
@@ -1705,7 +1709,7 @@
         </div>
           <div class="pattern-desc milli island" style="">
             <div class="max-length"><ul>
-<li>Text fields are used in forms where answers are anticipated to be more than 10 words.</li>
+<li>Text fields are used in forms where long answers are anticipated.</li>
 <li>Text field should always have their own line within the form.</li>
 </ul>
 </div>
@@ -1713,7 +1717,7 @@
 
       <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
         <div class="gutter-2 pad-t-1-2 pad-b-1-2">
-          <div class="resizeable-pattern relative" style="">
+          <div class="resizeable-pattern relative" style="width:400px">
             <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
             <iframe data-src="patterns/forms/text-field.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
               <div class="resizeable-pattern-length">

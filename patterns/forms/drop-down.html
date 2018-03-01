@@ -15,18 +15,23 @@
   <link href="../forms/forms.css" rel="stylesheet">
 </head>
   <body>
-    <form class="picker" action="index.html" method="post">
-      <div class="push-1-2 gutter-1-4">
-        <label class="milli" for="province">Province</label>
-          <input class="box placeholder milli" id="province" placeholder="Select Province" list="province-list" required>
-          <datalist id="province-list">
-            <option value="Alberta">
-            <option value="Ontario">
-            <option value="Québec">
-            <option value="Nova Scotia">
-          </datalist>
+    <div class="push-1-2 gutter-1-4">
+      <label class="milli" for="province">Province</label>
+        <input class="box placeholder milli" id="province" placeholder="Select Province" list="province-list" required aria-describedby="drop-error">
+        <datalist id="province-list">
+          <option value="Alberta">
+          <option value="Ontario">
+          <option value="Québec">
+          <option value="Nova Scotia">
+        </datalist>
+        <p class="error-message milli island-1-4 push-0" id="drop-error">
+          <i class="icon i-16"><svg><use xlink:href="../../images/icons-1.svg#error" /></svg></i>
+          <span class="icon-label">Please select a province</span>
+        </p>
       </div>
-    </form>
   <body>
+
+  <script src="https://thomasjbradley.github.io/form-validation-helper/index.js"></script>
+
 
 </html>
