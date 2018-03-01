@@ -3,7 +3,11 @@ label {
   text-transform: uppercase;
 }
 
-input {
+.box {
   border: 1.5px solid var(--color-secondary-medium);
   height: 110%;
+}
+
+.placeholder {
+  text-transform: uppercase;
 }

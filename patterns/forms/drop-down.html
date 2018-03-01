@@ -15,10 +15,16 @@
   <link href="../forms/forms.css" rel="stylesheet">
 </head>
   <body>
-    <form class="" action="index.html" method="post">
+    <form class="picker" action="index.html" method="post">
       <div class="push-1-2 gutter-1-4">
-        <label class="milli" for="name">Name</label>
-        <input id="name" required aria-describedby="name-error">
+        <label class="milli" for="province">Province</label>
+          <input class="box placeholder milli" id="province" placeholder="Select Province" list="province-list" required>
+          <datalist id="province-list">
+            <option value="Alberta">
+            <option value="Ontario">
+            <option value="Québec">
+            <option value="Nova Scotia">
+          </datalist>
       </div>
     </form>
   <body>

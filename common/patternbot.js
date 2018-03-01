@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1519886936018
+ * @version 1519887837454
  */
-const patternManifest_1519886936017 = {
+const patternManifest_1519887837454 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -692,17 +692,22 @@ const patternManifest_1519886936017 = {
       "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms",
       "html": [
         {
-          "name": "basic-form",
-          "namePretty": "Basic form",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/basic-form.html",
-          "localPath": "patterns/forms/basic-form.html"
+          "name": "basic-field",
+          "namePretty": "Basic field",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/basic-field.html",
+          "localPath": "patterns/forms/basic-field.html"
         },
         {
-          "name": "product-card",
-          "namePretty": "Product card",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/product-card.html",
-          "localPath": "patterns/forms/product-card.html",
-          "readme": {}
+          "name": "drop-down",
+          "namePretty": "Drop down",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/drop-down.html",
+          "localPath": "patterns/forms/drop-down.html"
+        },
+        {
+          "name": "radio-field",
+          "namePretty": "Radio field",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/radio-field.html",
+          "localPath": "patterns/forms/radio-field.html"
         }
       ],
       "md": [
@@ -787,5 +792,5 @@ const patternManifest_1519886936017 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519886936017);
+patternBotIncludes(patternManifest_1519887837454);
 }());
