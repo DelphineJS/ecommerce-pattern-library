@@ -1,0 +1,9 @@
+label {
+  color: var(--color-secondary-dark);
+  text-transform: uppercase;
+}
+
+input {
+  border: 1.5px solid var(--color-secondary-medium);
+  height: 110%;
+}
