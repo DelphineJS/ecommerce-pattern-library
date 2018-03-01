@@ -29,4 +29,4 @@ text-field:
     - Text field should always have their own line within the form.
 
 ---
-Forms are fields with labels that allow you to fill out information or select options from a list. They are used on pages that require the user to send information to the website, like checkout pages or surveys. They are often surrounding a grid that can be used to dictate the size of the form fields. Forms should always have a title to tell you what they do.
+Forms are fields with labels that allow you to fill out information or select options from a list. They are used on pages that require the user to send information to the website, like checkout pages or surveys. They are often surrounding a grid that can be used to dictate the size of the form fields. Forms should always have a title or a legend to tell you what they do.

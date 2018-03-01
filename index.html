@@ -1358,7 +1358,7 @@
   </div>
 
     <div class="pattern-desc milli island" >
-      <div class="max-length"><p>Forms are fields with labels that allow you to fill out information or select options from a list. They are used on pages that require the user to send information to the website, like checkout pages or surveys. They are often surrounding a grid that can be used to dictate the size of the form fields. Forms should always have a title to tell you what they do.</p>
+      <div class="max-length"><p>Forms are fields with labels that allow you to fill out information or select options from a list. They are used on pages that require the user to send information to the website, like checkout pages or surveys. They are often surrounding a grid that can be used to dictate the size of the form fields. Forms should always have a title or a legend to tell you what they do.</p>
 </div>
     </div>
 
@@ -1431,7 +1431,7 @@
   &lt;label class="milli" for="name">Name&lt;/label>
   &lt;input class="box milli" id="name" required aria-describedby="name-error">
   &lt;p class="error-message milli island-1-4 push-0" id="name-error">
-    &lt;i class="icon i-16">&lt;svg>&lt;use xlink:href="../../images/icons-1.svg#error"/>&lt;/svg>&lt;/i>
+    &lt;i class="icon i-16">&lt;svg>&lt;use xlink:href="../../images/icons.svg#nav-open"/>&lt;/svg>&lt;/i>
     &lt;span class="icon-label">Please provide a name&lt;/span>
   &lt;/p>
 &lt;/div>
@@ -1502,12 +1502,10 @@
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="forms-checkbox-code-sample-copy-chunk">&lt;form action="index.html" method="post"&gt;
-  &lt;div class="push-1-2 gutter-1-4 pad-t-1-2">
-    &lt;input type="checkbox" name="save" value="save" id="save">
-    &lt;label class="milli check" for="save">Save for future orders&lt;/label>
-  &lt;/div>
-&lt;/form>
+              <code><pre id="forms-checkbox-code-sample-copy-chunk">&lt;div class="push-1-2 gutter-1-4 pad-t-1-2"&gt;
+  &lt;input type="checkbox" name="save" value="save" id="save">
+  &lt;label class="milli check" for="save">Save for future orders&lt;/label>
+&lt;/div>
 </pre></code>
             </div>
           </div>
@@ -1590,7 +1588,7 @@
     &lt;/option>
   &lt;/datalist>
   &lt;p class="error-message milli island-1-4 push-0" id="drop-error">
-    &lt;i class="icon i-16">&lt;svg>&lt;use xlink:href="../../images/icons-1.svg#error"/>&lt;/svg>&lt;/i>
+    &lt;i class="icon i-16">&lt;svg>&lt;use xlink:href="../../images/icons.svg#nav-open"/>&lt;/svg>&lt;/i>
     &lt;span class="icon-label">Please select a province&lt;/span>
   &lt;/p>
 &lt;/div>
@@ -1662,19 +1660,21 @@
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="forms-radio-buttons-code-sample-copy-chunk">&lt;form action="index.html" method="post"&gt;
-  &lt;fieldset>
-    &lt;legend class="push-1-2">Shipping Method&lt;/legend>
-    &lt;div class="radio block push-1-2">
-      &lt;input class="radio" type="radio" id="standard" name="shipping">
-      &lt;label for="standard">Standard Shipping&lt;/label>
-    &lt;/div>
-    &lt;div class="radio block push-1-2">
-      &lt;input class="radio" type="radio" id="expedited" name="shipping">
-      &lt;label for="expedited">Expedited Shipping&lt;/label>
-    &lt;/div>
-  &lt;/fieldset>
-&lt;/form>
+              <code><pre id="forms-radio-buttons-code-sample-copy-chunk">&lt;fieldset&gt;
+  &lt;legend class="push-1-2">Shipping Method&lt;/legend>
+  &lt;div class="radio block push-1-2">
+    &lt;input class="radio" type="radio" id="standard" name="shipping" required aria-describedby="radio-error">
+    &lt;label for="standard">Standard Shipping&lt;/label>
+  &lt;/div>
+  &lt;div class="radio block push-1-2">
+    &lt;input class="radio" type="radio" id="expedited" name="shipping" required aria-describedby="radio-error">
+    &lt;label for="expedited">Expedited Shipping&lt;/label>
+  &lt;/div>
+  &lt;p class="error-message milli island-1-4 push-0" id="radio-error">
+    &lt;i class="icon i-16">&lt;svg>&lt;use xlink:href="../../images/icons.svg#nav-open"/>&lt;/svg>&lt;/i>
+    &lt;span class="icon-label">Please select an option&lt;/span>
+  &lt;/p>
+&lt;/fieldset>
 </pre></code>
             </div>
           </div>
@@ -1742,12 +1742,14 @@
                   <svg><use xlink:href="#icon-copy"></use></svg>
                 </i>
               </button>
-              <code><pre id="forms-text-field-code-sample-copy-chunk">&lt;form action="index.html" method="post"&gt;
-  &lt;div class="push-1-2 gutter-1-4">
-    &lt;label class="milli" for="long-answer">Tell us more&lt;/label>
-    &lt;textarea id="long-answer">&lt;/textarea>
-  &lt;/div>
-&lt;/form>
+              <code><pre id="forms-text-field-code-sample-copy-chunk">&lt;div class="push-1-2 gutter-1-4"&gt;
+  &lt;label class="milli" for="long-answer">Tell us more&lt;/label>
+  &lt;textarea id="long-answer">&lt;/textarea>
+&lt;/div>
+&lt;p class="error-message milli island-1-4 push-0" id="long-error">
+  &lt;i class="icon i-16">&lt;svg>&lt;use xlink:href="../../images/icons.svg#nav-open"/>&lt;/svg>&lt;/i>
+  &lt;span class="icon-label">Please select an option&lt;/span>
+&lt;/p>
 </pre></code>
             </div>
           </div>
