@@ -11,3 +11,23 @@ label {
 .placeholder {
   text-transform: uppercase;
 }
+
+legend {
+  font: var(--color-accent);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.radio label{
+  text-transform: none;
+  opacity: 0.5;
+}
+
+.radio label:checked{
+  opacity: 1;
+}
+
+.radio {
+  padding-left: 1em;
+}

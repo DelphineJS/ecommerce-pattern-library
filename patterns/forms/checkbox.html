@@ -2,7 +2,7 @@
 <html lang="en-ca">
 <head>
   <meta charset="utf-8">
-  <title>Drop Down</title>
+  <title>Checkbox</title>
   <meta name="handheldfriendly" content="true">
   <meta name="mobileoptimized" content="240">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -14,19 +14,13 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
   <link href="../forms/forms.css" rel="stylesheet">
 </head>
-  <body>
-    <form class="picker" action="index.html" method="post">
-      <div class="push-1-2 gutter-1-4">
-        <label class="milli" for="province">Province</label>
-          <input class="box placeholder milli" id="province" placeholder="Select Province" list="province-list" required>
-          <datalist id="province-list">
-            <option value="Alberta">
-            <option value="Ontario">
-            <option value="Québec">
-            <option value="Nova Scotia">
-          </datalist>
-      </div>
-    </form>
-  <body>
+    <body>
+      <form action="index.html" method="post">
+        <div class="push-1-2 gutter-1-4 pad-t-1-2">
+          <input type="checkbox" name="save" value="save" id="save">
+          <label class="milli check" for="save">Save for future orders</label>
+        </div>
+      </form>
+    <body>
 
 </html>
