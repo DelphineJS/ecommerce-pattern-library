@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1520485418950
+ * @version 1520486597744
  */
-const patternManifest_1520485418950 = {
+const patternManifest_1520486597744 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -805,22 +805,32 @@ const patternManifest_1520485418950 = {
       "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation",
       "html": [
         {
+          "name": "breadcrumbs",
+          "namePretty": "Breadcrumbs",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation/breadcrumbs.html",
+          "localPath": "patterns/navigation/breadcrumbs.html",
+          "readme": {}
+        },
+        {
           "name": "footer-navigation",
           "namePretty": "Footer navigation",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation/footer-navigation.html",
-          "localPath": "patterns/navigation/footer-navigation.html"
+          "localPath": "patterns/navigation/footer-navigation.html",
+          "readme": {}
         },
         {
           "name": "side-navigation",
           "namePretty": "Side navigation",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation/side-navigation.html",
-          "localPath": "patterns/navigation/side-navigation.html"
+          "localPath": "patterns/navigation/side-navigation.html",
+          "readme": {}
         },
         {
           "name": "top-navigation",
           "namePretty": "Top navigation",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation/top-navigation.html",
-          "localPath": "patterns/navigation/top-navigation.html"
+          "localPath": "patterns/navigation/top-navigation.html",
+          "readme": {}
         }
       ],
       "md": [
@@ -861,5 +871,5 @@ const patternManifest_1520485418950 = {
   }
 };
 
-patternBotIncludes(patternManifest_1520485418950);
+patternBotIncludes(patternManifest_1520486597744);
 }());

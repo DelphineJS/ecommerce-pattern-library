@@ -1,19 +1,21 @@
 ---
-ad-banner:
+breadcrumbs:
   desc: |
-    - Ad banners are seen on product pages and used to display sales and featured items.
-    - These banners have no body copy, just a heading and call to action.
-    - They must float on the page, and should not touch the navigation. Their width is also capped at larger screen sizes.
-footer-banner:
+    - Breadcrumbs show the user where they are on the inner pages of the website. They are only seen on product pages, and do not appear on main pages such as the home page or the cart.
+    - Breadcrumbs show a series of links to bring you to the place you have just come from.
+footer-navigation:
   desc: |
-    - Footer banners are seen on the home and product overview pages, and are used to prompt interaction.
-    - These banners have a heading, a description, and a call to action.
-    - They should span the whole width of the page, but are not as tall as a home banner.
-home-banner:
+    - The footer navigation is seen on all pages. It contains all of the same content as the main navigation, with the exception of a cart link.
+    - The footer also has links to social media.
+    - The logo acts as a home button.
+side-navigation:
   desc: |
-    - Home banners are used on the home page to display the most important featured information.
-    - These banners have a heading, a description, and a call to action.
-    - They should span the whole width of the page, and take up almost the full height of the viewport.
-
+    - The side navigation is only seen on product overview pages where multiple products are displayed.
+    - It should only take up 1/4 of the main grid, and should always be seen alongside product. It should never be the only thing on a line.
+    - The side navigation is not shown on mobile sizes. It appears only at large screen sizes when the width of the page allows it.
+top-navigation:
+  desc: |
+    - The top navigation acts as a main menu to all pages on the website.
+    - The logo acts as a home button, and is shown with a wordmark at large screen sizes.
 ---
-Banners display a relevant image or product shot while displaying a title and call to action. Different banners appear on different pages and sections.
+Navigations act as pathways to different pages on the website. You should be able to use the navigation to reach your destination.

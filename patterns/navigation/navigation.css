@@ -35,6 +35,10 @@ background-color: var(--color-primary);
   font-weight: bold;
 }
 
+li a:hover {
+  color: var(--color-accent);
+}
+
 .nav-check:checked ~ .nav {
   display: block;
 }
@@ -105,6 +109,19 @@ label.nav-label::before {
 
 .bottom-logo {
   text-align: center;
+}
+
+.breadcrumbs {
+color: var(--color-secondary);
+}
+
+.breadcrumbs .current {
+color: var(--color-accent);
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 @media only screen and (min-width: 60em) {
