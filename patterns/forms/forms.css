@@ -87,3 +87,7 @@ legend {
 #xl-control:checked ~ .size-controls [for="xl-control"] {
   filter: opacity(1);
 }
+
+.undecorated {
+  border: none;
+}
