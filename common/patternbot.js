@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1521115809413
+ * @version 1521123827914
  */
-const patternManifest_1521115809413 = {
+const patternManifest_1521123827914 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -760,6 +760,12 @@ const patternManifest_1521115809413 = {
           }
         },
         {
+          "name": "radio-sizes",
+          "namePretty": "Radio sizes",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/radio-sizes.html",
+          "localPath": "patterns/forms/radio-sizes.html"
+        },
+        {
           "name": "text-field",
           "namePretty": "Text field",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/text-field.html",
@@ -917,5 +923,5 @@ const patternManifest_1521115809413 = {
   }
 };
 
-patternBotIncludes(patternManifest_1521115809413);
+patternBotIncludes(patternManifest_1521123827914);
 }());

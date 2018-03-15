@@ -1496,6 +1496,7 @@
             <li><a href="#forms--checkbox">Checkbox</a></li>
             <li><a href="#forms--drop-down">Drop down</a></li>
             <li><a href="#forms--radio-buttons">Radio buttons</a></li>
+            <li><a href="#forms--radio-sizes">Radio sizes</a></li>
             <li><a href="#forms--text-field">Text field</a></li>
         </ol>
       </nav>
@@ -1808,17 +1809,96 @@
   &lt;legend class="push-1-2">Shipping Method&lt;/legend>
   &lt;div class="radio block push-1-2">
     &lt;input class="radio" type="radio" id="standard" name="shipping" required aria-describedby="radio-error">
-    &lt;label for="standard">Standard Shipping&lt;/label>
+    &lt;label class="standard-label" for="standard">Standard Shipping&lt;/label>
   &lt;/div>
   &lt;div class="radio block push-1-2">
     &lt;input class="radio" type="radio" id="expedited" name="shipping" required aria-describedby="radio-error">
-    &lt;label for="expedited">Expedited Shipping&lt;/label>
+    &lt;label class="standard-label" for="expedited">Expedited Shipping&lt;/label>
   &lt;/div>
   &lt;p class="error-message milli island-1-4 push-0" id="radio-error">
     &lt;i class="icon i-16">&lt;svg>&lt;use xlink:href="../../images/icons.svg#nav-open"/>&lt;/svg>&lt;/i>
     &lt;span class="icon-label">Please select an option&lt;/span>
   &lt;/p>
 &lt;/fieldset>
+</pre></code>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="pattern-details " id="forms--radio-sizes" style="">
+        <div class="pattern-toolbar pattern-toolbar-inner relative gutter pad-t-1-4 pad-b-1-4" style="">
+          <h3 class="pattern-name tera push-1-8">Radio sizes</h3>
+            <ul class="list-group-inline gutter absolute pin-cr">
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-code-btn" title="Show code" aria-label="Show code" aria-pressed="false" aria-controls="forms-radio-sizes-code-sample">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-code"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <button class="center-contents-vertical pattern-tool-btn pattern-include-btn" title="Copy include" aria-label="Copy include" data-copy-include-pattern="forms/radio-sizes" hidden>
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-copy"></use></svg>
+                    </i>
+                  </button>
+                </li>
+                <li>
+                  <a class="btn center-contents-vertical pattern-tool-btn pattern-pop-btn" href="patterns/forms/radio-sizes.html" target="_blank" title="Open pattern in a new tab" aria-label="Open pattern in a new tab">
+                    <i class="icon i-18">
+                      <svg><use xlink:href="#icon-pop-out"></use></svg>
+                    </i>
+                  </a>
+                </li>
+            </ul>
+        </div>
+
+      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
+        <div class="gutter-2 pad-t-1-2 pad-b-1-2">
+          <div class="resizeable-pattern relative" style="">
+            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
+            <iframe data-src="patterns/forms/radio-sizes.html" scrolling="no" onload="resizeIframe(this)"  ></iframe>
+              <div class="resizeable-pattern-length">
+                <div class="resize-handle resize-handle-left" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+                <div class="resize-handle resize-handle-right" style="">
+                  <i class="icon i-18">
+                    <svg><use xlink:href="#icon-resize-handle" /></svg>
+                  </i>
+                </div>
+              </div>
+          </div>
+        </div>
+
+          <div class="pattern-code-wrap gutter pad-t-1-2 pad-b-1-2" hidden aria-hidden="true" id="forms-radio-sizes-code-sample" tabindex="-1">
+            <div class="pattern-code relative milli island-1-2" style="">
+              <button class="center-contents-vertical pattern-tool-btn pattern-copy-btn absolute pin-tr" title="Copy code" aria-label="Copy code" data-clipboard-target="#forms-radio-sizes-code-sample-copy-chunk" hidden>
+                <i class="icon i-18">
+                  <svg><use xlink:href="#icon-copy"></use></svg>
+                </i>
+              </button>
+              <code><pre id="forms-radio-sizes-code-sample-copy-chunk">&lt;input class="size-input" type="radio" name="size" id="small-control"&gt;
+&lt;input class="size-input" type="radio" name="size" id="medium-control" checked>
+&lt;input class="size-input" type="radio" name="size" id="large-control">
+&lt;input class="size-input" type="radio" name="size" id="xl-control">
+
+&lt;ul class="size-controls list-group-inline w-1 text-center push-0 island-1-2">
+  &lt;li class="size-list gutter-1-8">
+    &lt;label class="size-btn size-box" for="small-control">S&lt;/label>
+  &lt;/li>
+  &lt;li class="size-list gutter-1-8">
+    &lt;label class="size-btn size-box" for="medium-control">M&lt;/label>
+  &lt;/li>
+  &lt;li class="size-list gutter-1-8">
+    &lt;label class="size-btn size-box" for="large-control">L&lt;/label>
+  &lt;/li>
+  &lt;li class="size-list gutter-1-8">
+    &lt;label class="size-btn size-box" for="xl-control">XL&lt;/label>
+  &lt;/li>
+&lt;/ul>
 </pre></code>
             </div>
           </div>
