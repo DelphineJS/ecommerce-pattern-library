@@ -8,11 +8,11 @@ li a:hover {
 }
 
 .breadcrumbs {
-color: var(--color-secondary);
+  color: var(--color-secondary);
 }
 
 .breadcrumbs .current {
-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 .breadcrumbs a {
