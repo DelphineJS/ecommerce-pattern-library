@@ -1,7 +1,7 @@
 ---
-ad-banner:
+sale-banner:
   desc: |
-    - Ad banners are seen on product pages and used to display sales and featured items.
+    - Sale banners are seen on product pages and used to display sales and featured items.
     - These banners have no body copy, just a heading and call to action.
     - They must float on the page, and should not touch the navigation. Their width is also capped at larger screen sizes.
 footer-banner:

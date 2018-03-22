@@ -15,7 +15,7 @@
   border-color: var(--color-accent);
 }
 
-/* Buttons on dark*/
+/* Buttons on dark */
 
 .btn-light {
   background-color: var(--color-primary-light);
@@ -29,7 +29,7 @@
   background-color: rgba(255, 255, 255, 0);
 }
 
-/* Buttons on light hover states*/
+/* Buttons on light hover states */
 
 .btn:hover {
   background-color: var(--color-secondary-dark);
@@ -42,7 +42,7 @@
   color: #fff;
 }
 
-/* Buttons on dark hover states*/
+/* Buttons on dark hover states */
 
 .btn-light:hover {
   background-color: var(--color-secondary-medium);
