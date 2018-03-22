@@ -9,7 +9,7 @@
 
 .is-validated input:invalid,
 .is-validated input[type="checkbox"]:invalid + label::before {
-  border-color:
+  border-color: inherit;
 }
 
 .error-message {
@@ -31,7 +31,6 @@ fieldset[data-state="invalid"] .error-message,
   display: block;
 }
 
-
 .box {
   border: 1.5px solid var(--color-secondary-medium);
   height: 110%;
@@ -48,9 +47,9 @@ legend {
   font-size: 1.5em;
 }
 
-.radio label{
+.radio label {
   text-transform: none;
-  opacity: 0.5;
+  opacity: .5;
 }
 
 .radio + label {
