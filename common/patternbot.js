@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 1521125082901
+ * @version 1521688534158
  */
-const patternManifest_1521125082901 = {
+const patternManifest_1521688534158 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -570,13 +570,6 @@ const patternManifest_1521125082901 = {
       "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners",
       "html": [
         {
-          "name": "ad-banner",
-          "namePretty": "Ad banner",
-          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners/ad-banner.html",
-          "localPath": "patterns/banners/ad-banner.html",
-          "readme": {}
-        },
-        {
           "name": "footer-banner",
           "namePretty": "Footer banner",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners/footer-banner.html",
@@ -589,6 +582,12 @@ const patternManifest_1521125082901 = {
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners/home-banner.html",
           "localPath": "patterns/banners/home-banner.html",
           "readme": {}
+        },
+        {
+          "name": "sale-banner",
+          "namePretty": "Sale banner",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners/sale-banner.html",
+          "localPath": "patterns/banners/sale-banner.html"
         }
       ],
       "md": [
@@ -923,5 +922,5 @@ const patternManifest_1521125082901 = {
   }
 };
 
-patternBotIncludes(patternManifest_1521125082901);
+patternBotIncludes(patternManifest_1521688534158);
 }());

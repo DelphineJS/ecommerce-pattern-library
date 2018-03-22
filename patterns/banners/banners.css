@@ -16,7 +16,7 @@
   min-height: 400px;
 }
 
-.ad-banner-bg {
+.sale-banner-bg {
   background: url("../../images/flannel.jpg") bottom center /cover no-repeat;
   min-height: 300px;
   max-width: 900px;
@@ -24,6 +24,6 @@
   left: 50%;
 }
 
-.ad-banner-text {
+.sale-banner-text {
   width: 75%;
 }

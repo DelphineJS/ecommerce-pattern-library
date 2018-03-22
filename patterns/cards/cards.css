@@ -8,15 +8,15 @@
   background-color: var(--color-secondary);
 }
 
-h2 {
+.card-title {
   color: var(--color-primary-light);
 }
 
-a {
+.link-card {
   text-decoration: none;
 }
 
-a:hover {
+.link-card:hover {
   color: var(--color-accent);
 }
 

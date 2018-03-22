@@ -1,37 +1,8 @@
-.nav {
-  display: none;
-  padding-bottom: 10px;
-  padding-top: 0;
-}
-
-.logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 5px;
-}
-
-.nav-bar {
-  background-color: var(--color-primary);
-  height: 60px;
-}
-
-footer {
+.bottom-nav {
   background-color: var(--color-primary);
 }
 
-.nav li {
-text-align: center;
-background-color: var(--color-primary);
-}
-
-.nav li a{
-  color: var(--color-secondary-dark);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-li a:hover {
+.bottom-nav li a:hover {
   color: var(--color-accent);
 }
 
@@ -55,21 +26,6 @@ li a:hover {
 }
 
 @media only screen and (min-width: 60em) {
-
-  .nav {
-  display: inline-block;
-  text-align: center;
-
-  }
-
-  .nav li {
-  text-align: right;
-  background-color: inherit;
-  }
-
-  .li {
-    display: inline-block;
-  }
 
   .bottom-content {
       position: relative;
