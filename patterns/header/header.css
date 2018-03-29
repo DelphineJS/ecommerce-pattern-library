@@ -29,10 +29,26 @@
   color: var(--color-secondary-dark);
   text-decoration: none;
   font-weight: bold;
+  position: relative;
+}
+
+.nav li a::after {
+  content: " ";
+  position: absolute;
+  bottom: -.2em;
+  left: 0;
+  height: 3px;
+  width: 0;
+  transition: all 100ms linear;
+  background-color: var(--color-accent);
 }
 
 .nav li a:hover {
   color: var(--color-accent);
+}
+
+.nav li a:hover::after {
+  width: 100%;
 }
 
 .nav-check:checked ~ .nav {

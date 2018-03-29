@@ -7,6 +7,7 @@
   border-radius: 0;
   font-weight: bold;
   text-transform: uppercase;
+  transition: all 100ms linear;
 }
 
 .btn-ghost {
