@@ -11,8 +11,8 @@
   color: var(--color-primary);
 }
 
-.footer-banner-bg {
-  background: url("../../images/backpack.jpg") bottom center /cover no-repeat;
+.footer-banner {
+  background: none bottom center /cover no-repeat;
   min-height: 400px;
 }
 
@@ -30,4 +30,12 @@
 
 .banner-text a {
   color: var(--color-primary);
+}
+
+.footer-banner-home {
+  background-image: url("../../images/stag.jpg");
+}
+
+.footer-banner-bg {
+  background-image: url("../../images/backpack.jpg");
 }
