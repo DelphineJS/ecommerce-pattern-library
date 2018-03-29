@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>Home | Black Stag Apparel</title>
+  <meta name="handheldfriendly" content="true">
+  <meta name="mobileoptimized" content="240">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="../common/patternbot.js"></script>
+</head>
+<body>
+
+  <script type="application/json" data-pattern="header/header"></script>
+
+  <script type="application/json" data-pattern="banners/home-banner"></script>
+
+  <main class="grid wrapper">
+    <h2 class="text-center pad-t-2 mega unit xs-1 push-2">New Arrivals</h2>
+    <div class="unit xs-1 m-1 l-1-3 gutter">
+      <script type="application/json" data-pattern="cards/product-card"></script>
+    </div>
+    <div class="unit xs-1 m-1 l-1-3 gutter">
+      <script type="application/json" data-pattern="cards/product-card">
+        {
+          "img[src]": "../images/snowbank-tee.jpg",
+          "strong": "Snowbank Tee",
+          "data": "$30.00"
+        }
+      </script>
+    </div>
+    <div class="unit xs-1 m-1 l-1-3 gutter">
+      <script type="application/json" data-pattern="cards/product-card">
+        {
+          "img[src]": "../images/grey-pouch.jpg",
+          "strong": "Black Stag Pouch",
+          "data": "$15.00"
+        }
+      </script>
+    </div>
+    </div>
+    <div class="unit xs-1 pad-t-2">
+      <script type="application/json" data-pattern="cards/home-card"></script>
+    </div>
+    <div class="unit xs-1 pad-t-2 push-2">
+      <script type="application/json" data-pattern="cards/home-card-secondary"></script>
+    </div>
+  </main>
+  <footer class="grey-bg">
+    <div class="wrapper push-2">
+      <h2 class="text-center pad-t-2 push-1-2">Explore</h2>
+      <p class="text-center push">Check out our instagram for some style inspiration</p>
+      <script type="application/json" data-pattern="images/social-photo-array"></script>
+    </div>
+    <script type="application/json" data-pattern="banners/footer-banner"></script>
+    </div>
+    <script type="application/json" data-pattern="footer/footer"></script>
+  </footer>
+
+
+</body>
+</html>

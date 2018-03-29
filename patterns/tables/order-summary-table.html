@@ -2,7 +2,7 @@
 <html lang="en-ca">
 <head>
   <meta charset="utf-8">
-  <title>Home Banner</title>
+  <title>Text Field</title>
   <meta name="handheldfriendly" content="true">
   <meta name="mobileoptimized" content="240">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,18 +11,34 @@
   <link href="../../common/type.css" rel="stylesheet">
   <link href="../../common/theme.css" rel="stylesheet">
   <link href="../buttons/buttons.css" rel="stylesheet">
-  <link href="../banners/banners.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
+  <link href="../tables/tables.css" rel="stylesheet">
 </head>
-<body style="min-height: 500px">
-
-  <div class="home-banner-bg island text-center relative">
-    <div class="banner-text absolute pin-c">
-      <h1 class="banner-head gutter push-1-2">Stay&nbsp;Warm</h1>
-      <p class="mega push">Our winter solstice collection is here.</p>
-      <a class="btn btn-ghost btn-ghost-light" href="#">Shop Now</a>
-    </div>
-  </div>
-
+<body>
+  <table class="milli">
+    <tr>
+      <th scope="row">Items</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th scope="row">Subtotal</td>
+      <td>$86.00</td>
+    </tr>
+    <tr>
+      <th scope="row">Shipping & Handling</td>
+      <td>Free</td>
+    </tr>
+    <tr>
+      <th scope="row">GST/HST</td>
+      <td>$11.13</td>
+    </tr>
+    <tfoot class="summary">
+      <tr>
+        <th scope="row" class="text-upper totals">Order Total</td>
+        <td class="totals">$97.18</td>
+      </tr>
+    </tfoot>
+  </table>
 </body>
+
 </html>

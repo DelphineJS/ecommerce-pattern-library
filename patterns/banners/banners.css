@@ -1,6 +1,6 @@
 .home-banner-bg {
   background: url("../../images/pines.jpg") bottom center /cover no-repeat;
-  height: 90vh;
+  height: 80vh;
 }
 
 .banner-head {
@@ -26,4 +26,8 @@
 
 .sale-banner-text {
   width: 75%;
+}
+
+.banner-text a {
+  color: var(--color-primary);
 }

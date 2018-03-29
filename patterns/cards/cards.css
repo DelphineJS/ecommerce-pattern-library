@@ -14,6 +14,7 @@
 
 .link-card {
   text-decoration: none;
+color: var(--color-secondary-medium);
 }
 
 .link-card:hover {

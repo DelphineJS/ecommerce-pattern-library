@@ -1,0 +1,23 @@
+.totals {
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+td {
+  border-bottom: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: right;
+  width: 30%;
+}
+
+.summary {
+  border-bottom: 1px var(--color-secondary-medium) solid;
+  border-top: 1px var(--color-secondary-medium) solid;
+}
+
+th {
+  border-bottom: none;
+  font-weight: normal;
+  width: 70%;
+}

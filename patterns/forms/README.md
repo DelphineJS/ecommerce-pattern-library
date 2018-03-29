@@ -22,6 +22,11 @@ radio-buttons:
     - These buttons may be used within a form where only one option in a list may be selected.
     - They should appear opaque when selected, and at 50% opacity if not selected.
     - Radio buttons must always appear with a legend or title.
+radio-sizes:
+  width: 400
+  desc: |
+    - Radio size buttons may be used within a product page only for size selection for clothing products and for products that have multiple options to choose from.
+    - They should appear opaque when selected, and at 50% opacity if not selected.
 text-field:
   width: 400
   desc: |

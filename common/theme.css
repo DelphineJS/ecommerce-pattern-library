@@ -88,3 +88,7 @@ mark {
   background-color: var(--color-secondary);
   color: #fff;
 }
+
+.grey-bg {
+  background-color: var(--color-primary);
+}
