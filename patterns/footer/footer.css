@@ -46,6 +46,10 @@
 
 @media only screen and (min-width: 60em) {
 
+  .bottom-list {
+    margin-top: 2em;
+  }
+
   .bottom-content {
     position: relative;
   }

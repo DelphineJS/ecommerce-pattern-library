@@ -67,6 +67,10 @@
   z-index: 100000;
 }
 
+.bottom-nav-li {
+  padding-bottom: 2em;
+}
+
 .nav-label {
   cursor: pointer;
   display: inline-block;
