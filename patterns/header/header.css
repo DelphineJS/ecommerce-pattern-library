@@ -110,7 +110,19 @@ label.nav-label::before {
   color: var(--color-accent);
 }
 
+@media only screen and (min-width: 38em) {
+
+  .bottom-nav-li {
+    padding-bottom: .7rem;
+  }
+
+}
+
 @media only screen and (min-width: 60em) {
+
+  .bottom-nav-li {
+    padding-bottom: .75rem;
+  }
 
   .logo {
     position: inherit;
