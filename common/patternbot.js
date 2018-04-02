@@ -444,9 +444,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version cbb76ce340d6dd772affa50e1eef4f2da5ee00d8
+ * @version b5e51210efcc014a4c5b29e27536d458cb536498
  */
-const patternManifest_cbb76ce340d6dd772affa50e1eef4f2da5ee00d8 = {
+const patternManifest_b5e51210efcc014a4c5b29e27536d458cb536498 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -665,6 +665,11 @@ const patternManifest_cbb76ce340d6dd772affa50e1eef4f2da5ee00d8 = {
         "name": "home.html",
         "namePretty": "Home",
         "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/home.html"
+      },
+      {
+        "name": "product-list.html",
+        "namePretty": "Product list",
+        "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/product-list.html"
       }
     ],
     "js": []
@@ -1119,5 +1124,5 @@ const patternManifest_cbb76ce340d6dd772affa50e1eef4f2da5ee00d8 = {
   }
 };
 
-patternBotIncludes(patternManifest_cbb76ce340d6dd772affa50e1eef4f2da5ee00d8);
+patternBotIncludes(patternManifest_b5e51210efcc014a4c5b29e27536d458cb536498);
 }());

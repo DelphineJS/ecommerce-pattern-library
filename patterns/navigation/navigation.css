@@ -9,6 +9,9 @@ li a:hover {
 
 .breadcrumbs {
   color: var(--color-secondary);
+  max-width: 52em;
+  padding-right: .25em;
+  padding-left: .5em;
 }
 
 .breadcrumbs .current {
@@ -18,4 +21,14 @@ li a:hover {
 .breadcrumbs a {
   text-decoration: none;
   text-transform: uppercase;
+}
+
+@media only screen and (min-width: 52em) {
+  .breadcrumbs {
+    padding-left:0;
+    padding-right: 0;
+  }
+
+
+
 }
