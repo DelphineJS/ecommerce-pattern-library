@@ -9,7 +9,7 @@ li a:hover {
 
 .breadcrumbs {
   color: var(--color-secondary);
-  max-width: 52em;
+  max-width: 48em;
   padding-right: .25em;
   padding-left: .5em;
 }

@@ -1,4 +1,4 @@
-.nav {
+.header-nav {
   display: none;
   padding-bottom: 10px;
   padding-top: 0;
@@ -25,12 +25,12 @@
   display: none;
 }
 
-.nav li {
+.header-nav li {
   text-align: center;
   background-color: var(--color-primary);
 }
 
-.nav li a {
+.header-nav li a {
   color: var(--color-secondary-dark);
   text-decoration: none;
   font-weight: bold;
@@ -38,7 +38,7 @@
   z-index: 1000;
 }
 
-.nav li a::after {
+.header-nav li a::after {
   content: " ";
   position: absolute;
   bottom: -.2em;
@@ -49,15 +49,15 @@
   background-color: var(--color-accent);
 }
 
-.nav li a:hover {
+.header-nav li a:hover {
   color: var(--color-accent);
 }
 
-.nav li a:hover::after {
+.header-nav li a:hover::after {
   width: 100%;
 }
 
-.nav-check:checked ~ .nav {
+.nav-check:checked ~ .header-nav {
   display: block;
   position: absolute;
   top: 46px;
@@ -119,7 +119,7 @@ label.nav-label::before {
     display: inline-block;
   }
 
-  .nav {
+  .header-nav {
     display: inline-block;
     text-align: center;
   }
@@ -133,7 +133,7 @@ label.nav-label::before {
     height: inherit;
   }
 
-  .nav li {
+  .header-nav li {
     text-align: right;
     background-color: inherit;
   }
@@ -142,7 +142,7 @@ label.nav-label::before {
     display: inline-block;
   }
 
-  .nav-check:checked ~ .nav {
+  .nav-check:checked ~ .header-nav {
     display: inline-block;
   }
 
