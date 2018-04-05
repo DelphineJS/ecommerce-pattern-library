@@ -130,16 +130,6 @@
                 </div>
               </a>
             </li>
-            <li role="presentation">
-              <a class="gutter pad-t-1-4 pad-b-1-4 block" role="tab" aria-controls="icons" href="#icons">
-                <div class="relative">
-                  <span>Icons</span>
-                  <i class="icon i-18 absolute pin-cr">
-                    <svg><use xlink:href="#icon-active" /></svg>
-                  </i>
-                </div>
-              </a>
-            </li>
               <li role="presentation">
                 <a class="gutter pad-t-1-4 pad-b-1-4 block" role="tab" aria-controls="banners" href="#banners">
                   <div class="relative">
@@ -781,35 +771,6 @@
                   </i>
                 </div>
               </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-</section>
-
-        <section class="pattern" id="icons" role="tabpanel" hidden aria-hidden="true" style="">
-  <div class="pattern-toolbar gutter pad-t-1-4 pad-b-1-8 relative" style="">
-    <h2 class="pattern-name exa push-1-4" style="color: #1d3a3d; font-family: ;">Icons</h2>
-        <ul class="list-group-inline gutter absolute pin-cr">
-        </ul>
-  </div>
-
-    <div class="pattern-desc milli island" style="">
-      <div class="max-length"><p>The sprite sheet contains the following icons that are available for use in the website. Combine the icons with <a href="https://modulifier.web-dev.tools">Modulifier</a> classes for lots of variability. <a href="https://learn-the-web.algonquindesign.ca/topics/modulifier-cheat-sheet/">See the documentation for all available classes.</a></p>
-</div>
-    </div>
-
-  
-
-    <div class="pattern-details " id="icons--icons" style="">
-
-      <div class="pattern-examples pad-t-1-2 pad-b-1-2" style="">
-        <div class="gutter pad-t-1-2 pad-b-1-2">
-          <div class="resizeable-pattern relative" style="">
-            <i class="icon i-32 patternbot-iframe-loading-gears absolute pin-c"><svg><use xlink:href="#patternbot-iframe-loading-gears"></use></svg></i>
-            <iframe data-src="patterns/icons/1-icons.html" scrolling="no" data-inject-css=" " ></iframe>
           </div>
         </div>
 
@@ -1475,9 +1436,12 @@
                 </i>
               </button>
               <code><pre id="cards-product-card-code-sample-copy-chunk">&lt;a href="#" class="link-card"&gt;
-  &lt;figure>
-    &lt;div class="embed embed-1by1 push-1-2">
+  &lt;figure class="hover-box">
+    &lt;div class="embed embed-1by1 push-1-2 main-photo">
       &lt;img class="embed-item" src="../../images/tank-dark.jpg" alt="">
+    &lt;/div>
+    &lt;div class="embed embed-1by1 push-1-2 hover-photo">
+      &lt;img class="embed-item" src="../../images/tank-detail-1.jpg" alt="">
     &lt;/div>
     &lt;figcaption class="text-center milli">
       &lt;strong class="block micro">Fractal Tank &#x2014;&#xA0;Charcoal&lt;/strong>
@@ -1596,7 +1560,7 @@
           &lt;span class="icon-label hidden">Email&lt;/span>
         &lt;/a>
     &lt;/div>
-    &lt;aside class=" pad-t micro text-center copyright">Copyright 2018 Black Stag Apparel&lt;/aside>
+    &lt;aside class=" pad-t micro text-center copyright">&#xA9; 2018 Black Stag Apparel&lt;/aside>
   &lt;/div>
 &lt;/footer>
 </pre></code>
@@ -2179,8 +2143,8 @@
   &lt;div class="nav-bar grid grid-middle">
     &lt;div class="wrapper">
       &lt;div class="unit xs-1 l-1-3 island-1-4 logo-box">
-        &lt;a href="index.html">&lt;img class="logo icon i-36" src="../../images/logo-large.svg" alt="">&lt;/a>
-        &lt;a href="index.html">&lt;img class="logo wordmark icon" src="../../images/wordmark.svg" alt="">&lt;/a>
+        &lt;a href="../pages/home.html">&lt;img class="logo icon i-36" src="../../images/logo-large.svg" alt="">&lt;/a>
+        &lt;a href="../pages/home.html">&lt;img class="logo wordmark icon" src="../../images/wordmark.svg" alt="">&lt;/a>
       &lt;/div>
       &lt;nav class="nav-top unit xs-1 l-2-3">
         &lt;input type="checkbox" class="nav-check" id="nav-check">
@@ -2189,7 +2153,7 @@
           &lt;img class="nav-close icon i-36" src="../../images/nav-open.svg" alt="Close Navigation">
         &lt;/label>
         &lt;ul class="header-nav list-group text-upper grid top-nav-li text-right">
-          &lt;li class="island-1-2 gutter-1-2 unit xs-1 s-1 m-1 li l-1-5 milli top-nav-item">&lt;a href="#">Apparel&lt;/a>&lt;/li>
+          &lt;li class="island-1-2 gutter-1-2 unit xs-1 s-1 m-1 li l-1-5 milli top-nav-item">&lt;a href="../pages/product-list.html">Apparel&lt;/a>&lt;/li>
           &lt;li class="island-1-2 gutter-1-2 unit xs-1 s-1 m-1 li l-1-5 milli">&lt;a href="#">Prints&lt;/a>&lt;/li>
           &lt;li class="island-1-2 gutter-1-2 unit xs-1 s-1 m-1 li l-1-5 milli">&lt;a href="#">About&lt;/a>&lt;/li>
           &lt;li class="island-1-2 gutter-1-2 unit xs-1 s-1 m-1 li l-1-5 milli">&lt;a href="#">Contact&lt;/a>&lt;/li>
@@ -2566,7 +2530,7 @@
               </button>
               <code><pre id="navigation-breadcrumbs-code-sample-copy-chunk">&lt;div class="breadcrumbs wrapper grid pad-t-1-4 push-1-4"&gt;
   &lt;div class="unit xs-1 micro">
-    &lt;a href="#">Black Stag&lt;/a> &gt; &lt;a href="#">Apparel&lt;/a> &gt; &lt;a href="#" class="current">Fractal Tank &#x2014; Charcoal&lt;/a>
+    &lt;a class="breadcrumbs-l-1" href="#">Black Stag &gt;&lt;/a>&lt;a class="breadcrumbs-l-2" href="#">Apparel &gt;&lt;/a>&lt;a class="current" href="#">Fractal Tank &#x2014; Charcoal&lt;/a>
   &lt;/div>
 &lt;/div>
 </pre></code>

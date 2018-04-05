@@ -25,6 +25,22 @@ color: var(--color-secondary-medium);
   transform: scale(1.6);
 }
 
+.product-grid {
+  width: 75%;
+}
+
+.hover-photo {
+  display: none;
+}
+
+.hover-box:hover .main-photo{
+  display: none;
+}
+
+.hover-box:hover .hover-photo{
+  display: block;
+}
+
 @media only screen and (min-width: 25em) {
 
   .scaler {

@@ -23,6 +23,9 @@ li a:hover {
   text-transform: uppercase;
 }
 
+.none {
+  display: none;
+}
 @media only screen and (min-width: 52em) {
   .breadcrumbs {
     padding-left:0;

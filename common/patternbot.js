@@ -444,9 +444,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version b5e51210efcc014a4c5b29e27536d458cb536498
+ * @version 422215ec64c62e1c6c32996e6aeb253dfad48720
  */
-const patternManifest_b5e51210efcc014a4c5b29e27536d458cb536498 = {
+const patternManifest_422215ec64c62e1c6c32996e6aeb253dfad48720 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -614,16 +614,6 @@ const patternManifest_b5e51210efcc014a4c5b29e27536d458cb536498 = {
       "bodyRaw": "\nBlack Stag Apparel is an Ottawa-based company that carries linocut prints, hand-printed clothing, and leather goods. Our items are printed traditionally and assembled by hand, and our ultimate goal is to provide our customer with a beautiful, unique product.\n",
       "bodyBasic": "Black Stag Apparel is an Ottawa-based company that carries linocut prints, hand-printed clothing, and leather goods. Our items are printed traditionally and assembled by hand, and our ultimate goal is to provide our customer with a beautiful, unique product."
     },
-    "icons": [
-      "email",
-      "facebook",
-      "instagram",
-      "logo-large",
-      "logo-small",
-      "nav-close",
-      "nav-open",
-      "twitter"
-    ],
     "interfaceColours": {
       "primary": 0,
       "opposite": 255
@@ -1124,5 +1114,5 @@ const patternManifest_b5e51210efcc014a4c5b29e27536d458cb536498 = {
   }
 };
 
-patternBotIncludes(patternManifest_b5e51210efcc014a4c5b29e27536d458cb536498);
+patternBotIncludes(patternManifest_422215ec64c62e1c6c32996e6aeb253dfad48720);
 }());
