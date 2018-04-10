@@ -2,7 +2,7 @@
 <html lang="en-ca">
 <head>
   <meta charset="utf-8">
-  <title>Home | Black Stag Apparel</title>
+  <title>Apparel | Black Stag Apparel</title>
   <meta name="handheldfriendly" content="true">
   <meta name="mobileoptimized" content="240">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -19,8 +19,12 @@
   </script>
 </header>
 <main class="wrapper">
-  <script type="application/json" data-pattern="banners/sale-banner"></script>
-    <h2 class="text-center pad-t mega push">All Apparel</h2>
+  <script type="application/json" data-pattern="banners/sale-banner">
+    {
+      ".sale-banner[class]":"sale-banner sale-banner-bg product-list island text-center relative"
+    }
+  </script>
+  <h2 class="text-center pad-t mega push">All Apparel</h2>
   <div class="grid wrapper pad-t-1-4">
     <div class="unit xs-0 l-1-4 content-fill">
         <script type="application/json" data-pattern="navigation/side-navigation"></script>
@@ -85,7 +89,12 @@
   </div>
 </main>
 <footer>
-  <script type="application/json" data-pattern="banners/footer-banner"></script>
+  <script type="application/json" data-pattern="banners/footer-banner">
+    {
+      ".footer-banner[class]":"footer-banner footer-banner-bg island text-center relative",
+      "h2": "Get a Steal"
+    }
+  </script>
   <script type="application/json" data-pattern="footer/footer"></script>
 </footer>
 

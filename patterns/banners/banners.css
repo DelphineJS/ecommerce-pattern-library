@@ -16,8 +16,8 @@
   min-height: 400px;
 }
 
-.sale-banner-bg {
-  background: url("../../images/flannel.jpg") bottom center /cover no-repeat;
+.sale-banner {
+  background: none center center /cover no-repeat;
   min-height: 300px;
   max-width: 52em;
   transform: translateX(-50%);
@@ -38,4 +38,11 @@
 
 .footer-banner-bg {
   background-image: url("../../images/backpack.jpg");
+}
+.sale-banner-bg {
+  background-image: url("../../images/flannel.jpg");
+}
+
+.checkout-banner-bg {
+  background-image: url("../../images/mountain.jpg");
 }

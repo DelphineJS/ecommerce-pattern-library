@@ -92,3 +92,15 @@ mark {
 .grey-bg {
   background-color: var(--color-primary);
 }
+
+.white-bg {
+  background-color: #fff;
+}
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
+}
