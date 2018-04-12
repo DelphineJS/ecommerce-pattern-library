@@ -93,6 +93,10 @@ mark {
   background-color: var(--color-primary);
 }
 
+.lt-grey-bg {
+  background-color: var(--color-primary-light);
+}
+
 .white-bg {
   background-color: #fff;
 }
