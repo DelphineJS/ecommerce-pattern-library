@@ -104,3 +104,11 @@ mark {
 .block {
   display: block;
 }
+
+fieldset {
+  border-top: 0;
+}
+
+.tabs {
+  float: right;
+}
