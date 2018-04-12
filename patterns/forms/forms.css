@@ -99,3 +99,7 @@ legend {
 .form-list {
   margin-bottom: 0;
 }
+
+fieldset {
+  border-top: 0;
+}
