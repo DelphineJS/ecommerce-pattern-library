@@ -57,7 +57,7 @@ legend {
 }
 
 .radio {
-  padding-left: 1em;
+  padding-left: .5em;
   font-size: 1rem;
 }
 
@@ -89,4 +89,17 @@ legend {
 
 .undecorated {
   border: none;
+}
+
+.sidebar {
+  transform: translateX(-1em);
+  height: 20em;
+}
+
+.form-list {
+  margin-bottom: 0;
+}
+
+fieldset {
+  border-top: 0;
 }
