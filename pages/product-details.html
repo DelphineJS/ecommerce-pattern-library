@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>Product Details | Black Stag Apparel</title>
+  <meta name="handheldfriendly" content="true">
+  <meta name="mobileoptimized" content="240">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="../common/patternbot.js"></script>
+</head>
+<body>
+  <header>
+    <script type="application/json" data-pattern="header/header"></script>
+  </header>
+  <main>
+    <div class="island wrapper">
+      <script type="application/json" data-pattern="navigation/breadcrumbs"></script>
+    </div>
+    <div class="grid wrapper">
+      <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2 island">
+        <script type="application/json" data-pattern="images/product-array"></script>
+      </div>
+      <div class="unit unit-xs-1 unit-s-1 unit-m-1-2 unit-l-1-2 island">
+        <h5 class="push-none">Fractal Tank — Charcoal</h5>
+        <h6 class="push-1-2">$25.00</h6>
+        <p class="milli bold push-none">Select size</p>
+        <div class="">
+          <script type="application/json" data-pattern="forms/radio-sizes"></script>
+        </div>
+        <a class="milli block push-1-2" href="#">Sizing Guide</a>
+        <a class="push-2 btn" href="#">Add to Cart</a>
+        <h5 class="kilo push-1-2">Description</h5>
+        <p class="milli">This super soft tank is hand printed using linoleum carvings and a traditional printing press. The image is printed using oil-based ink, and each tank is printed using a variable design, so each one is unique.</p>
+        <h5 class="kilo push-1-2">Details</h5>
+        <ol class="list-group milli">
+          <li>100% cotton.</li>
+          <li>Hand wash in cold water.</li>
+          <li>Hang to dry.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="lt-grey-bg">
+      <div class="wrapper">
+        <h5 class="text-center pad-t push-none">Related Items</h5>
+        <div class="grid gutter">
+          <div class="unit unit-xs-1-3 unit-s-1-3 unit-m-1-3 unit-l-1-3 island">
+            <script type="application/json" data-pattern="cards/product-card">
+              {
+                ".main-photo img[src]": "../images/red-pouch.png",
+                ".hover-photo img[src]": "../images/pouch-red-hover.jpg",
+                "strong": "Black Stag Pouch — Burgundy",
+                "data": "$15.00"
+              }
+            </script>
+          </div>
+          <div class="unit unit-xs-1-3 unit-s-1-3 unit-m-1-3 unit-l-1-3 island">
+            <script type="application/json" data-pattern="cards/product-card">
+              {
+                ".main-photo img[src]": "../images/triangle-tank.png",
+                ".hover-photo img[src]": "../images/triangle-tank-hover.jpg",
+                "strong": "Fractal Tank — Ivory",
+                "data": "$25.00"
+              }
+            </script>
+          </div>
+          <div class="unit unit-xs-1-3 unit-s-1-3 unit-m-1-3 unit-l-1-3 island">
+            <script type="application/json" data-pattern="cards/product-card">
+              {
+                ".main-photo img[src]": "../images/tee-bear.png",
+                ".hover-photo img[src]": "../images/tee-bear-hover.jpg",
+                "strong": "Bear Tee",
+                "data": "$30.00"
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <script type="application/json" data-pattern="footer/footer"></script>
+  </footer>
+</body>
+</html>
