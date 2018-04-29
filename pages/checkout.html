@@ -25,137 +25,164 @@
         ".sale-banner-text[class]":"none sale-banner-text banner-text absolute pin-c"
       }
     </script>
-  <form class="grid grey-bg" method="post" action="#">
-    <h2 class="text-center pad-t mega push unit xs-1">Checkout</h2>
-    <div class="unit xs-1 s-1 m-1 l-2-3 gutter-2">
-      <h3 class="milli push-1-2 gutter-1-4"> 1. Shipping Address</h3>
-      <div class="grid">
-        <div class="unit xs-1 m-1-2">
-          <script type="application/json" data-pattern="forms/basic-field">
-            {
-            ".label": "First Name"
-            }
+    <form class="grid grey-bg push-2" method="post" action="#">
+      <h2 class="text-center pad-t mega push unit xs-1">Checkout</h2>
+      <div class="unit xs-1 s-1 m-2-3 l-2-3 gutter-2">
+        <h3 class="milli push-1-2 gutter-1-4"> 1. Shipping Address</h3>
+        <div class="grid">
+          <div class="unit xs-1 m-1-2">
+            <script type="application/json" data-pattern="forms/basic-field">
+              {
+              ".label": "First Name"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1 m-1-2">
+            <script type="application/json" data-pattern="forms/basic-field">
+              {
+              ".label": "Last Name"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1">
+            <script type="application/json" data-pattern="forms/basic-field">
+              {
+              ".label": "Street Address"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1 m-2-3">
+            <script type="application/json" data-pattern="forms/basic-field">
+              {
+              ".label": "Apt. or Unit Number"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1 m-1-3">
+            <script type="application/json" data-pattern="forms/basic-field">
+              {
+              ".label": "City"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1 m-1-2">
+            <script type="application/json" data-pattern="forms/drop-down">
+              {
+              ".label": "Province"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1 m-1-2 push-0">
+            <script type="application/json" data-pattern="forms/basic-field">
+              {
+              ".label": "Country"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1 m-1-2 micro push">
+          <script type="application/json" data-pattern="forms/checkbox">
+              {
+              ".label": "Set As Billing Address"
+              }
           </script>
-        </div>
-        <div class="unit xs-1 m-1-2">
-          <script type="application/json" data-pattern="forms/basic-field">
-            {
-            ".label": "Last Name"
-            }
-          </script>
-        </div>
-        <div class="unit xs-1">
-          <script type="application/json" data-pattern="forms/basic-field">
-            {
-            ".label": "Street Address"
-            }
-          </script>
-        </div>
-        <div class="unit xs-1 m-2-3">
-          <script type="application/json" data-pattern="forms/basic-field">
-            {
-            ".label": "Apt. or Unit Number"
-            }
-          </script>
-        </div>
-        <div class="unit xs-1 m-1-3">
-          <script type="application/json" data-pattern="forms/basic-field">
-            {
-            ".label": "City"
-            }
-          </script>
-        </div>
-        <div class="unit xs-1 m-1-2">
-          <script type="application/json" data-pattern="forms/drop-down">
-            {
-            ".label": "Province"
-            }
-          </script>
-        </div>
-        <div class="unit xs-1 m-1-2 push-0">
-          <script type="application/json" data-pattern="forms/basic-field">
-            {
-            ".label": "Country"
-            }
-          </script>
-        </div>
-        <div class="unit xs-1 m-1-2 micro push">
-        <script type="application/json" data-pattern="forms/checkbox">
-            {
-            ".label": "Set As Billing Address"
-            }
-        </script>
-        </div>
-        <div class="unit xs-1 micro push-1-4 gutter-1-4">
-          <hr class="unit xs-1 push-1-2">
-        </div>
-        <h3 class="milli push-1-2 unit xs-1 gutter-1-4"> 2. Shipping Method</h3>
-        <div class="unit xs-1 micro">
-          <script type="application/json" data-pattern="forms/radio-buttons"></script>
-        </div>
-        <div class="unit xs-1 micro push-1-4 gutter-1-4">
-          <hr class="unit xs-1 push-1-2">
-        </div>
-        <h3 class="milli push-1-2 unit xs-1 gutter-1-4"> 3. Payment Information</h3>
-        <div class="unit xs-1 m-1-2">
-          <script type="application/json" data-pattern="forms/basic-field">
-            {
-            ".label": "Card number"
-            }
-          </script>
-        </div>
-        <div class="unit xs-1-3 m-1-6">
-          <script type="application/json" data-pattern="forms/basic-field">
-            {
-            ".label": "dd"
-            }
-          </script>
-        </div>
-        <div class="unit xs-1-3 m-1-6">
-          <script type="application/json" data-pattern="forms/basic-field">
-            {
-            ".label": "mm"
-            }
-          </script>
-        </div>
-        <div class="unit xs-1-3 m-1-6">
-          <script type="application/json" data-pattern="forms/basic-field">
-            {
-            ".label": "yyyy"
-            }
-          </script>
-        </div>
-        <div class="unit xs-1">
-          <script type="application/json" data-pattern="forms/basic-field">
-            {
-            ".label": "Name on Card"
-            }
-          </script>
-        </div>
-        <div class="unit xs-1 push-1-2">
-          <script type="application/json" data-pattern="forms/checkbox"></script>
-        </div>
-        <div class="unit xs-1 gutter-1-4 push-2">
-          <a class="btn" href="#">Check out</a>
+          </div>
+          <div class="unit xs-1 micro push-1-4 gutter-1-4">
+            <hr class="unit xs-1 push-1-2">
+          </div>
+          <h3 class="milli push-1-2 unit xs-1 gutter-1-4"> 2. Shipping Method</h3>
+          <div class="unit xs-1 micro">
+            <script type="application/json" data-pattern="forms/radio-buttons"></script>
+          </div>
+          <div class="unit xs-1 micro push-1-4 gutter-1-4">
+            <hr class="unit xs-1 push-1-2">
+          </div>
+          <h3 class="milli push-1-2 unit xs-1 gutter-1-4"> 3. Payment Information</h3>
+          <div class="unit xs-1 m-1-2">
+            <script type="application/json" data-pattern="forms/basic-field">
+              {
+              ".label": "Card number"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1-3 m-1-6">
+            <script type="application/json" data-pattern="forms/basic-field">
+              {
+              ".label": "dd"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1-3 m-1-6">
+            <script type="application/json" data-pattern="forms/basic-field">
+              {
+              ".label": "mm"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1-3 m-1-6">
+            <script type="application/json" data-pattern="forms/basic-field">
+              {
+              ".label": "yyyy"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1">
+            <script type="application/json" data-pattern="forms/basic-field">
+              {
+              ".label": "Name on Card"
+              }
+            </script>
+          </div>
+          <div class="unit xs-1 push-1-2">
+            <script type="application/json" data-pattern="forms/checkbox"></script>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="unit xs-0 s-0 m-0 l-1-3 white-bg island gutter sidebar">
-      <h3 class="milli push-1-2"> Order Summary</h3>
-      <dl class="grid milli">
-        <dd class="unit m-3-4 push-0">Items</dd>
-        <dt class="unit m-1-4 text-right bold">3</dt>
-        <dd class="unit m-3-4 push-0">Subtotal</dd>
-        <dt class="unit m-1-4 text-right bold">$86.00</dt>
-        <dd class="unit m-3-4 push-0">Shipping & Handling</dd>
-        <dt class="unit m-1-4 text-right bold text-upper">Free</dt>
-        <dd class="unit m-3-4 push-0">GST/HST</dd>
-        <dt class="unit m-1-4 text-right bold">$11.13</dt>
-      </dl>
-      <div class="unit xs-1 micro push-1-2 pad-t-1-2">
-        <hr>
-
+      <div class="unit xs-1 s-1 m-1-3 l-1-3 white-bg island gutter sidebar">
+        <h3 class="milli push-1-2"> Order Summary</h3>
+        <table class="milli push-1-2">
+          <tbody>
+            <tr class="grid">
+              <th class="unit xs-1-2" scope="row">Items</td>
+              <td class="unit xs-1-2">3</td>
+            </tr>
+            <tr class="grid">
+              <th class="unit xs-1-2" scope="row">Subtotal</td>
+              <td class="unit xs-1-2">$86.00</td>
+            </tr>
+            <tr class="grid">
+              <th class="unit xs-2-3" scope="row">Shipping & Handling</td>
+              <td class="unit xs-1-3 text-upper">Free</td>
+            </tr>
+            <tr class="grid push-1-4">
+              <th class="unit xs-1-2" scope="row">GST/HST</td>
+              <td class="unit xs-1-2">$11.13</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="grid pad-t-1-4 push-1-4">
+              <th class="unit xs-1-2 text-upper bold" scope="total"> Order Total</td>
+              <td class="unit xs-1-2">$97.18</td>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="grid grid-bottom">
+          <div class="unit xs-2-3">
+            <script type="application/json" data-pattern="forms/basic-field">
+              {
+              ".label": "Promo Code",
+              ".label[class]": "milli label bold",
+              "input": "not-required",
+              "div[class]": "push-1-4 gutter-0 pad-t-0 push-r-1-4"
+              }
+            </script>
+          </div>
+          <button class="btn unit xs-1-3 grid-bottom micro push-1-4" href="#">Apply</button>
+        </div>
       </div>
+      <div class="unit xs-1 gutter-2 push-2 wrapper">
+        <a class="btn" href="#">Check out</a>
       </div>
-    </div>
-  </form>
+    </form>
+  </main>
+  <script type="application/json" data-pattern="footer/footer"></script>
+</html>

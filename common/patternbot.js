@@ -86,11 +86,17 @@ const patternBotIncludes = function (manifest) {
     `},
   };
 
+  let jsFileQueue = {
+    sync: [],
+    async: [],
+  };
   let downloadedAssets = {};
 
   const downloadHandler = function (e) {
+    const id = (e.target.hasAttribute('src')) ? e.target.getAttribute('src') : e.target.getAttribute('href');
+
     e.target.removeEventListener('load', downloadHandler);
-    downloadedAssets[e.target.getAttribute('href')] = true;
+    downloadedAssets[id] = true;
   };
 
   const findRootPath = function () {
@@ -115,7 +121,7 @@ const patternBotIncludes = function (manifest) {
     newLink.addEventListener('load', downloadHandler);
 
     document.head.appendChild(newLink);
-  }
+  };
 
   const bindAllCssFiles = function (rootPath) {
     if (manifest.commonInfo && manifest.commonInfo.readme && manifest.commonInfo.readme.attributes &&  manifest.commonInfo.readme.attributes.fontUrl) {
@@ -136,6 +142,54 @@ const patternBotIncludes = function (manifest) {
         addCssFile(`../${css.localPath}`);
       });
     });
+  };
+
+  const queueAllJsFiles = function (rootPath) {
+    if (manifest.patternLibFiles && manifest.patternLibFiles.js) {
+      manifest.patternLibFiles.js.forEach((js) => {
+        const href = `..${manifest.config.commonFolder}/${js.filename}`;
+
+        downloadedAssets[href] = false;
+        jsFileQueue.sync.push(href);
+      });
+    }
+
+    manifest.userPatterns.forEach((pattern) => {
+      if (!pattern.js) return;
+
+      pattern.js.forEach((js) => {
+        const href = `../${js.localPath}`;
+
+        downloadedAssets[href] = false;
+        jsFileQueue.async.push(href);
+      });
+    });
+  };
+
+  const addJsFile = function (href) {
+    const newScript = document.createElement('script');
+
+    newScript.setAttribute('src', href);
+    document.body.appendChild(newScript);
+
+    return newScript;
+  };
+
+  const bindNextJsFile = function (e) {
+    if (e && e.target) {
+      e.target.removeEventListener('load', bindNextJsFile);
+      downloadedAssets[e.target.getAttribute('src')] = true;
+    }
+
+    if (jsFileQueue.sync.length > 0) {
+      const scriptTag = addJsFile(jsFileQueue.sync.shift());
+      scriptTag.addEventListener('load', bindNextJsFile);
+    } else {
+      jsFileQueue.async.forEach((js) => {
+        const scriptTag = addJsFile(js);
+        scriptTag.addEventListener('load', downloadHandler);
+      });
+    }
   };
 
   const getPatternInfo = function (patternElem) {
@@ -368,11 +422,13 @@ const patternBotIncludes = function (manifest) {
 
     rootPath = findRootPath();
     bindAllCssFiles(rootPath);
+    queueAllJsFiles(rootPath);
     allPatternTags = findAllPatternTags();
     allPatterns = constructAllPatterns(rootPath, allPatternTags);
 
     loadAllPatterns(allPatterns).then((allLoadedPatterns) => {
       renderAllPatterns(allPatternTags, allLoadedPatterns);
+      bindNextJsFile();
       hideLoadingScreen();
     }).catch((e) => {
       console.group('Pattern load error');
@@ -387,10 +443,10 @@ const patternBotIncludes = function (manifest) {
 
 /** 
  * Patternbot library manifest
- * /Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library
- * @version 1523540491669
+ * /Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library
+ * @version 03059f0ee189d094af4b0a1507cd55ba0003860a
  */
-const patternManifest_1523540491668 = {
+const patternManifest_03059f0ee189d094af4b0a1507cd55ba0003860a = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -565,69 +621,70 @@ const patternManifest_1523540491668 = {
   },
   "patternLibFiles": {
     "commonParsable": {
-      "gridifier": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/common/grid.css",
-      "typografier": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/common/type.css",
-      "modulifier": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/common/modules.css",
-      "theme": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/common/theme.css"
+      "gridifier": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/common/grid.css",
+      "typografier": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/common/type.css",
+      "modulifier": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/common/modules.css",
+      "theme": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/common/theme.css"
     },
     "imagesParsable": {
-      "icons": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/images/icons.svg"
+      "icons": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/images/icons.svg"
     },
     "logos": {
-      "sizeLarge": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/images/logo-256.svg",
-      "size64": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/images/logo-64.svg",
-      "size32": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/images/logo-32.svg",
-      "size16": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/images/logo-16.svg",
+      "sizeLarge": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/images/logo-256.svg",
+      "size64": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/images/logo-64.svg",
+      "size32": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/images/logo-32.svg",
+      "size16": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/images/logo-16.svg",
       "size16Local": "logo-16.svg",
       "sizeLargeLocal": "logo-256.svg",
       "size32Local": "logo-32.svg",
       "size64Local": "logo-64.svg"
     },
     "patterns": [
-      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/banners",
-      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/buttons",
-      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/cards",
-      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/footer",
-      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/forms",
-      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/header",
-      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/images",
-      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/navigation",
-      "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/tables"
+      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners",
+      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/buttons",
+      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards",
+      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/footer",
+      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms",
+      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/header",
+      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/images",
+      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation",
+      "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/tables"
     ],
     "pages": [
       {
         "name": "checkout.html",
         "namePretty": "Checkout",
-        "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/pages/checkout.html"
+        "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/checkout.html"
       },
       {
         "name": "home.html",
         "namePretty": "Home",
-        "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/pages/home.html"
+        "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/home.html"
       },
       {
         "name": "product-details.html",
         "namePretty": "Product details",
-        "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/pages/product-details.html"
+        "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/product-details.html"
       },
       {
         "name": "product-list.html",
         "namePretty": "Product list",
-        "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/pages/product-list.html"
+        "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/pages/product-list.html"
       }
-    ]
+    ],
+    "js": []
   },
   "userPatterns": [
     {
       "name": "banners",
       "namePretty": "Banners",
-      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/banners",
+      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners",
       "html": [
         {
           "name": "footer-banner",
           "namePretty": "Footer banner",
           "filename": "footer-banner",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/banners/footer-banner.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners/footer-banner.html",
           "localPath": "patterns/banners/footer-banner.html",
           "readme": {}
         },
@@ -635,7 +692,7 @@ const patternManifest_1523540491668 = {
           "name": "home-banner",
           "namePretty": "Home banner",
           "filename": "home-banner",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/banners/home-banner.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners/home-banner.html",
           "localPath": "patterns/banners/home-banner.html",
           "readme": {}
         },
@@ -643,7 +700,7 @@ const patternManifest_1523540491668 = {
           "name": "sale-banner",
           "namePretty": "Sale banner",
           "filename": "sale-banner",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/banners/sale-banner.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners/sale-banner.html",
           "localPath": "patterns/banners/sale-banner.html",
           "readme": {}
         }
@@ -653,7 +710,7 @@ const patternManifest_1523540491668 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/banners/README.md",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners/README.md",
           "localPath": "patterns/banners/README.md"
         }
       ],
@@ -662,21 +719,22 @@ const patternManifest_1523540491668 = {
           "name": "banners",
           "namePretty": "Banners",
           "filename": "banners",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/banners/banners.css",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners/banners.css",
           "localPath": "patterns/banners/banners.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "buttons",
       "namePretty": "Buttons",
-      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/buttons",
+      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/buttons",
       "html": [
         {
           "name": "buttons-on-dark",
           "namePretty": "Buttons on dark",
           "filename": "buttons-on-dark",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/buttons/buttons-on-dark.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/buttons/buttons-on-dark.html",
           "localPath": "patterns/buttons/buttons-on-dark.html",
           "readme": {
             "backgroundColor": "#3c3f42",
@@ -691,7 +749,7 @@ const patternManifest_1523540491668 = {
           "name": "buttons-on-light",
           "namePretty": "Buttons on light",
           "filename": "buttons-on-light",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/buttons/buttons-on-light.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/buttons/buttons-on-light.html",
           "localPath": "patterns/buttons/buttons-on-light.html",
           "readme": {}
         }
@@ -701,7 +759,7 @@ const patternManifest_1523540491668 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/buttons/README.md",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/buttons/README.md",
           "localPath": "patterns/buttons/README.md"
         }
       ],
@@ -710,28 +768,29 @@ const patternManifest_1523540491668 = {
           "name": "buttons",
           "namePretty": "Buttons",
           "filename": "buttons",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/buttons/buttons.css",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/buttons/buttons.css",
           "localPath": "patterns/buttons/buttons.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "cards",
       "namePretty": "Cards",
-      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/cards",
+      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards",
       "html": [
         {
           "name": "home-card-secondary",
           "namePretty": "Home card secondary",
           "filename": "home-card-secondary",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/cards/home-card-secondary.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/home-card-secondary.html",
           "localPath": "patterns/cards/home-card-secondary.html"
         },
         {
           "name": "home-card",
           "namePretty": "Home card",
           "filename": "home-card",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/cards/home-card.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/home-card.html",
           "localPath": "patterns/cards/home-card.html",
           "readme": {}
         },
@@ -739,7 +798,7 @@ const patternManifest_1523540491668 = {
           "name": "product-card",
           "namePretty": "Product card",
           "filename": "product-card",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/cards/product-card.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/product-card.html",
           "localPath": "patterns/cards/product-card.html",
           "readme": {}
         }
@@ -749,7 +808,7 @@ const patternManifest_1523540491668 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/cards/README.md",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/README.md",
           "localPath": "patterns/cards/README.md"
         }
       ],
@@ -758,21 +817,22 @@ const patternManifest_1523540491668 = {
           "name": "cards",
           "namePretty": "Cards",
           "filename": "cards",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/cards/cards.css",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/cards/cards.css",
           "localPath": "patterns/cards/cards.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "footer",
       "namePretty": "Footer",
-      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/footer",
+      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/footer",
       "html": [
         {
           "name": "footer",
           "namePretty": "Footer",
           "filename": "footer",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/footer/footer.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/footer/footer.html",
           "localPath": "patterns/footer/footer.html"
         }
       ],
@@ -781,7 +841,7 @@ const patternManifest_1523540491668 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/footer/README.md",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/footer/README.md",
           "localPath": "patterns/footer/README.md"
         }
       ],
@@ -790,21 +850,22 @@ const patternManifest_1523540491668 = {
           "name": "footer",
           "namePretty": "Footer",
           "filename": "footer",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/footer/footer.css",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/footer/footer.css",
           "localPath": "patterns/footer/footer.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "forms",
       "namePretty": "Forms",
-      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/forms",
+      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms",
       "html": [
         {
           "name": "basic-field",
           "namePretty": "Basic field",
           "filename": "basic-field",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/forms/basic-field.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/basic-field.html",
           "localPath": "patterns/forms/basic-field.html",
           "readme": {
             "width": 400
@@ -814,7 +875,7 @@ const patternManifest_1523540491668 = {
           "name": "checkbox",
           "namePretty": "Checkbox",
           "filename": "checkbox",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/forms/checkbox.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/checkbox.html",
           "localPath": "patterns/forms/checkbox.html",
           "readme": {
             "width": 400
@@ -824,7 +885,7 @@ const patternManifest_1523540491668 = {
           "name": "drop-down",
           "namePretty": "Drop down",
           "filename": "drop-down",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/forms/drop-down.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/drop-down.html",
           "localPath": "patterns/forms/drop-down.html",
           "readme": {
             "width": 400
@@ -834,7 +895,7 @@ const patternManifest_1523540491668 = {
           "name": "radio-buttons",
           "namePretty": "Radio buttons",
           "filename": "radio-buttons",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/forms/radio-buttons.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/radio-buttons.html",
           "localPath": "patterns/forms/radio-buttons.html",
           "readme": {
             "width": 400
@@ -844,7 +905,7 @@ const patternManifest_1523540491668 = {
           "name": "radio-sizes",
           "namePretty": "Radio sizes",
           "filename": "radio-sizes",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/forms/radio-sizes.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/radio-sizes.html",
           "localPath": "patterns/forms/radio-sizes.html",
           "readme": {
             "width": 400
@@ -854,7 +915,7 @@ const patternManifest_1523540491668 = {
           "name": "text-field",
           "namePretty": "Text field",
           "filename": "text-field",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/forms/text-field.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/text-field.html",
           "localPath": "patterns/forms/text-field.html",
           "readme": {
             "width": 400
@@ -866,7 +927,7 @@ const patternManifest_1523540491668 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/forms/README.md",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/README.md",
           "localPath": "patterns/forms/README.md"
         }
       ],
@@ -875,21 +936,22 @@ const patternManifest_1523540491668 = {
           "name": "forms",
           "namePretty": "Forms",
           "filename": "forms",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/forms/forms.css",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/forms/forms.css",
           "localPath": "patterns/forms/forms.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "header",
       "namePretty": "Header",
-      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/header",
+      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/header",
       "html": [
         {
           "name": "header",
           "namePretty": "Header",
           "filename": "header",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/header/header.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/header/header.html",
           "localPath": "patterns/header/header.html"
         }
       ],
@@ -898,7 +960,7 @@ const patternManifest_1523540491668 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/header/README.md",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/header/README.md",
           "localPath": "patterns/header/README.md"
         }
       ],
@@ -907,21 +969,22 @@ const patternManifest_1523540491668 = {
           "name": "header",
           "namePretty": "Header",
           "filename": "header",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/header/header.css",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/header/header.css",
           "localPath": "patterns/header/header.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "images",
       "namePretty": "Images",
-      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/images",
+      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/images",
       "html": [
         {
           "name": "header-image",
           "namePretty": "Header image",
           "filename": "header-image",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/images/header-image.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/images/header-image.html",
           "localPath": "patterns/images/header-image.html",
           "readme": {}
         },
@@ -929,7 +992,7 @@ const patternManifest_1523540491668 = {
           "name": "product-array",
           "namePretty": "Product array",
           "filename": "product-array",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/images/product-array.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/images/product-array.html",
           "localPath": "patterns/images/product-array.html",
           "readme": {}
         },
@@ -937,7 +1000,7 @@ const patternManifest_1523540491668 = {
           "name": "social-photo-array",
           "namePretty": "Social photo array",
           "filename": "social-photo-array",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/images/social-photo-array.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/images/social-photo-array.html",
           "localPath": "patterns/images/social-photo-array.html",
           "readme": {}
         }
@@ -947,7 +1010,7 @@ const patternManifest_1523540491668 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/images/README.md",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/images/README.md",
           "localPath": "patterns/images/README.md"
         }
       ],
@@ -956,21 +1019,22 @@ const patternManifest_1523540491668 = {
           "name": "images",
           "namePretty": "Images",
           "filename": "images",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/images/images.css",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/images/images.css",
           "localPath": "patterns/images/images.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "navigation",
       "namePretty": "Navigation",
-      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/navigation",
+      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation",
       "html": [
         {
           "name": "breadcrumbs",
           "namePretty": "Breadcrumbs",
           "filename": "breadcrumbs",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/navigation/breadcrumbs.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation/breadcrumbs.html",
           "localPath": "patterns/navigation/breadcrumbs.html",
           "readme": {}
         },
@@ -978,7 +1042,7 @@ const patternManifest_1523540491668 = {
           "name": "side-navigation",
           "namePretty": "Side navigation",
           "filename": "side-navigation",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/navigation/side-navigation.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation/side-navigation.html",
           "localPath": "patterns/navigation/side-navigation.html",
           "readme": {}
         }
@@ -988,7 +1052,7 @@ const patternManifest_1523540491668 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/navigation/README.md",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation/README.md",
           "localPath": "patterns/navigation/README.md"
         }
       ],
@@ -997,21 +1061,22 @@ const patternManifest_1523540491668 = {
           "name": "navigation",
           "namePretty": "Navigation",
           "filename": "navigation",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/navigation/navigation.css",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/navigation/navigation.css",
           "localPath": "patterns/navigation/navigation.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "tables",
       "namePretty": "Tables",
-      "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/tables",
+      "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/tables",
       "html": [
         {
           "name": "order-summary-table",
           "namePretty": "Order summary table",
           "filename": "order-summary-table",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/tables/order-summary-table.html",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/tables/order-summary-table.html",
           "localPath": "patterns/tables/order-summary-table.html",
           "readme": {
             "width": 300
@@ -1023,7 +1088,7 @@ const patternManifest_1523540491668 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/tables/README.md",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/tables/README.md",
           "localPath": "patterns/tables/README.md"
         }
       ],
@@ -1032,10 +1097,11 @@ const patternManifest_1523540491668 = {
           "name": "tables",
           "namePretty": "Tables",
           "filename": "tables",
-          "path": "/Users/katiesheedy/Dropbox/Graphic Design Program/Semester 4/Web Dev/delphine-ecommerce-pattern-library/patterns/tables/tables.css",
+          "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/tables/tables.css",
           "localPath": "patterns/tables/tables.css"
         }
-      ]
+      ],
+      "js": []
     }
   ],
   "config": {
@@ -1058,5 +1124,5 @@ const patternManifest_1523540491668 = {
   }
 };
 
-patternBotIncludes(patternManifest_1523540491668);
+patternBotIncludes(patternManifest_03059f0ee189d094af4b0a1507cd55ba0003860a);
 }());

@@ -116,3 +116,17 @@ fieldset {
 .tabs {
   float: right;
 }
+
+table td,
+table th {
+  padding: 0.15em;
+}
+
+table td {
+  color: var(--color-accent);
+}
+
+tfoot {
+  border-top: 2px solid var(--color-secondary);
+  border-bottom: 2px solid var(--color-secondary);
+}
