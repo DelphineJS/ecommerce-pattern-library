@@ -130,3 +130,11 @@ tfoot {
   border-top: 2px solid var(--color-secondary);
   border-bottom: 2px solid var(--color-secondary);
 }
+
+.skip-links a:visited {
+  color: var(--color-primary);
+}
+
+.skip-links a:hover {
+  color: var(--color-secondary);
+}
