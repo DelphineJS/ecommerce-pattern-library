@@ -1,6 +1,8 @@
 /* Buttons on light */
 
-.btn {
+.btn,
+.btn:focus,
+.btn:visited {
   background-color: var(--color-accent);
   border-color: var(--color-accent);
   color: #fff;
@@ -10,7 +12,9 @@
   transition: all 100ms linear;
 }
 
-.btn-ghost {
+.btn-ghost,
+.btn-ghost:focus,
+.btn-ghost:visited {
   background-color: rgba(255, 255, 255, 0);
   color: var(--color-accent);
   border-color: var(--color-accent);
@@ -18,13 +22,17 @@
 
 /* Buttons on dark */
 
-.btn-light {
+.btn-light,
+.btn-light:focus,
+.btn-light:visited {
   background-color: var(--color-primary-light);
   color: var(--color-secondary-dark);
   border-color: var(--color-primary-light);
 }
 
-.btn-ghost-light {
+.btn-ghost-light,
+.btn-ghost-light:focus,
+.btn-ghost-light:visited {
   color: var(--color-primary-light);
   border-color: var(--color-primary-light);
   background-color: rgba(255, 255, 255, 0);
