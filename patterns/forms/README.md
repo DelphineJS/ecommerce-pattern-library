@@ -14,7 +14,7 @@ drop-down:
   width: 400
   desc: |
     - Drop down menus are used to select one answer from a finite list.
-    - These fields can be used within grids to determine their width. If the answer short, two may appear on the same line.
+    - These fields can be used within grids to determine their width. If the answer is short, two may appear on the same line.
     - Drop downs should have placeholders that prompt the user to select the answer within.
 radio-buttons:
   width: 400
