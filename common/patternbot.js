@@ -444,9 +444,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library
- * @version 03059f0ee189d094af4b0a1507cd55ba0003860a
+ * @version eb85b5bde97503848079e9461f2c4e90e74cd8c3
  */
-const patternManifest_03059f0ee189d094af4b0a1507cd55ba0003860a = {
+const patternManifest_eb85b5bde97503848079e9461f2c4e90e74cd8c3 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -686,7 +686,9 @@ const patternManifest_03059f0ee189d094af4b0a1507cd55ba0003860a = {
           "filename": "footer-banner",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners/footer-banner.html",
           "localPath": "patterns/banners/footer-banner.html",
-          "readme": {}
+          "readme": {
+            "height": 500
+          }
         },
         {
           "name": "home-banner",
@@ -694,7 +696,9 @@ const patternManifest_03059f0ee189d094af4b0a1507cd55ba0003860a = {
           "filename": "home-banner",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners/home-banner.html",
           "localPath": "patterns/banners/home-banner.html",
-          "readme": {}
+          "readme": {
+            "height": 500
+          }
         },
         {
           "name": "sale-banner",
@@ -702,7 +706,9 @@ const patternManifest_03059f0ee189d094af4b0a1507cd55ba0003860a = {
           "filename": "sale-banner",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/banners/sale-banner.html",
           "localPath": "patterns/banners/sale-banner.html",
-          "readme": {}
+          "readme": {
+            "height": 500
+          }
         }
       ],
       "md": [
@@ -1002,7 +1008,9 @@ const patternManifest_03059f0ee189d094af4b0a1507cd55ba0003860a = {
           "filename": "social-photo-array",
           "path": "/Users/delphinesullivan/Dropbox/Graphic Design Program/Semester 4/Web Dev IV/ecommerce-pattern-library/patterns/images/social-photo-array.html",
           "localPath": "patterns/images/social-photo-array.html",
-          "readme": {}
+          "readme": {
+            "height": 500
+          }
         }
       ],
       "md": [
@@ -1124,5 +1132,5 @@ const patternManifest_03059f0ee189d094af4b0a1507cd55ba0003860a = {
   }
 };
 
-patternBotIncludes(patternManifest_03059f0ee189d094af4b0a1507cd55ba0003860a);
+patternBotIncludes(patternManifest_eb85b5bde97503848079e9461f2c4e90e74cd8c3);
 }());

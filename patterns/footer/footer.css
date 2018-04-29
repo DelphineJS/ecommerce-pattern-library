@@ -40,15 +40,16 @@
   left: 0;
   height: 3px;
   width: 0;
-  transition: all 100ms linear;
+  transition: all 150ms linear;
   background-color: var(--color-accent);
 }
 
-@media only screen and (min-width: 60em) {
+.dark-green {
+  color: var(--color-accent);
+  text-decoration: none;
+}
 
-  .bottom-list {
-    margin-top: 1.5em;
-  }
+@media only screen and (min-width: 60em) {
 
   .bottom-content {
     position: relative;
@@ -72,6 +73,7 @@
     text-align: left;
     padding-top: 4em;
     border-bottom: 1px var(--color-secondary-dark) solid;
+    margin-top: 1.5em;
   }
 
   .copyright {

@@ -14,7 +14,7 @@
 
 .link-card {
   text-decoration: none;
-color: var(--color-secondary-medium);
+  color: var(--color-secondary-medium);
 }
 
 .link-card:hover {
@@ -33,11 +33,11 @@ color: var(--color-secondary-medium);
   display: none;
 }
 
-.hover-box:hover .main-photo{
+.hover-box:hover .main-photo {
   display: none;
 }
 
-.hover-box:hover .hover-photo{
+.hover-box:hover .hover-photo {
   display: block;
 }
 

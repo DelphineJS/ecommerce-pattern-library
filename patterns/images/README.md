@@ -10,6 +10,7 @@ product-array:
     - Product arrays show one main product shot, with 3 smaller detail shots below.
     - They should always be used alongside the product title and information.
 social-photo-array:
+  height: 500
   desc: |
     - Social photo arrays are used in footer sections. They display a grid of images pulled from the brand's social media accounts.
     - Each photo links to a hashtag on Black Stag's social media.
